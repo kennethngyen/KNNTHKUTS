@@ -1,0 +1,472 @@
+*{
+    padding: 0;
+    margin: 0;
+
+}
+
+*::-webkit-scrollbar{
+    display:none;
+}
+
+*{
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+*::selection{
+    background-color: rgba(159, 223, 159, 0.534);
+}
+
+body{
+    background-color: rgb(241, 237, 237);
+    
+    font-size: 1.1rem;
+    font-family: "Poppins", Times;
+}
+
+.wrapper{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+a{
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.kuts-logo{
+    z-index: 1000;
+    float: left;
+    margin-top: .6em;
+    margin-left: 1.5em;
+
+}
+
+a .kuts-logo{
+    height: 5rem;
+    width: 5rem;
+    opacity: 0;
+    animation: moveSide 1s ease-in-out forwards
+}
+
+section{
+    width:100%;
+    height:100vh;
+    background-size: cover;
+    background-position: center;
+    scroll-snap-align: start;
+}
+
+.hero-img{
+    background: url("../img/kutsBackground.jpg");
+    background-size: cover;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    width: 100%;
+    height: 100vh; /*viewport/viewable height*/
+    top: 0;
+    left: 0;
+    z-index: -1; /*fall behind 1 element*/
+    animation-timing-function: ease-in;
+    animation: introLoad 2s forwards; /*forwards loads once, introLoads defined*/
+    /*overflow: hidden;*/
+
+}
+
+.more-info{
+    background: url(../img/longBeachCollabNew.jpg);
+    z-index: -1;
+}
+
+.kuts-vid{
+    background-size: cover;
+    background-position: center;
+    scroll-snap-align: start;
+    background: white;
+    width:100%;
+    height:100vh;
+    position: relative;
+    z-index: -1;
+}
+
+.kuts-vid video{
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    z-index: -2;
+
+}
+
+
+nav{
+    position: fixed;
+    right:0;
+    top: 0;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    width: 40%;
+    z-index: 100; /*high # goes on top of everything*/
+    
+    transform: translateX(100%);
+    transition: transform .5s ease-in-out;
+    /*javascript portion*/
+    animation: introLoad 2s forwards;
+}
+
+nav ul{
+    list-style-type: none;
+
+    margin-top: 8em;
+    margin-bottom: 0em;
+}
+
+nav ul a{
+    color: black;
+    padding: .75em 2em;
+    display: block; /*padding wont work w/o block*/
+    text-shadow: 1px 1px 1px rgba(58, 83, 58, 0.534)
+   
+}
+
+nav ul a:hover{
+    background-color: rgba(193, 255, 177, 0.616);
+}
+
+nav .close{
+    float:right;
+    margin: 1em;
+    width: 2.5em;
+}
+
+/*button transitions*/
+
+nav ul a{
+    position: relative;
+    overflow: hidden;
+    display: block;
+    transition: 1s all ease;
+    color: black;
+    padding: 0.75em 2em;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 1px rgba(151, 184, 151, 0.911);
+}
+
+nav ul a:before{
+    width: 100%;
+    height: 0;
+    transform: translate(-50%,-50%) rotate(-45deg);
+    
+    transition: all 0.7s ease;
+    
+}
+nav ul a:hover::before{
+    height: 380%;
+    
+}
+
+
+/**/
+
+header{
+    display: flex; /*to put things into columns*/
+    justify-content: space-between;
+    z-index: 200;
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+
+header svg{
+    width: 3em;
+    margin-top: -.6em;
+    cursor: pointer;
+}
+
+
+
+.hero{
+    color: white;
+    height: 90vh;
+    padding: 1.5em;
+    
+}
+
+.hero svg{ /*or section.hero .down-arrow*/
+    position: absolute;
+    stroke: white;
+    margin-left: 80%;
+    bottom: 1.8em;
+    width: .5em;
+    /*down arrow*/
+    animation-timing-function: ease-in;
+    animation: moveArrow 2s alternate infinite;
+}
+
+.hero svg path{ /*specify in path attribute*/
+    fill:white;
+    
+}
+
+.pretext{
+    font-size: 5vw;
+    margin-top: 20vh; /*can use figma document to better use em units*/
+    line-height: 7vw;
+    text-align: left;
+    text-shadow: 1.4px 1.4px 2px rgba(58, 83, 58, 0.534);
+    animation-timing-function: ease-in;
+    opacity: 0;
+    animation: moveDown 1s ease-in-out forwards;
+    /*animation: introLoad 2s forwards;*/
+}
+
+.banner{
+    font-size: 8vw;
+    text-decoration: bold;
+    margin-top: 0.4vw; /*can use figma document to better use em units*/
+    margin-bottom: 3vw;
+    line-height: 8vw;
+    text-align: left;
+    text-shadow: 1.5px 1.5px 1px rgba(128, 128, 128, 0.829);
+    opacity: 0;
+    animation-timing-function: ease-out;
+    /*animation: introLoad 1.5s forwards;*/
+
+    animation: moveDown 1s ease-in-out forwards, grow 3s alternate infinite;
+}
+
+.appointment{
+    text-transform: uppercase;
+    font-size: 1vw;
+    margin-top: 20vh; /*can use figma document to better use em units*/
+    line-height: 7vw;
+    text-align: left;
+    font-family: Helvetica, sans-serif
+}
+
+.subhead{
+    font-size: 2.7vw;
+    line-height: 8vw;
+    text-align: left;
+    text-shadow: 1px 1px 2px rgba(58, 83, 58, 0.534);
+    animation-timing-function: linear;
+    opacity: 0;
+    animation: moveDown 2s ease-in-out forwards
+    /*animation: introLoad 3.5s forwards;*/
+}
+
+.menu{
+    width: 2.1em;
+    margin-top: .8em;
+    margin-right: 1.8em;
+
+}
+
+.menu path{ /*specify in path attribute*/
+    fill:white;
+    
+}
+
+header a{
+    margin-top: 0.3em;
+}
+
+
+.gif-container{
+    width: 15%;
+    display: inline-block;
+    margin: 1.5em;
+    margin-top: 5em;
+    
+}
+
+.gif-container-top{
+    
+    display: flex;
+
+}
+
+.gif-container-bot{
+    height: 200px;
+    display: block;
+
+}
+.gif-top{
+    height: 200px;
+    
+}
+
+.gif-bot{
+    height: 137px;
+    
+}
+
+
+
+
+/*media query*/
+@media only screen and (min-width: 620px) {
+    .wrapper{
+        
+    }
+    .body{
+        background-color: rgb(242, 242, 255);
+    }
+    .hero svg{ /*or section.hero .down-arrow*/
+        margin-left: 83%;
+    }
+
+    
+}
+
+@media only screen and (min-width: 920px) {
+    .wrapper{
+
+    }
+    .hero svg{ /*or section.hero .down-arrow*/
+        margin: 0 90%;   
+    }
+    .menu{
+        display: none;
+    }
+    header a{
+        margin-top: 1em;
+    }
+    .kuts-logo{
+        margin-top: .2em;
+        margin-left: 2.5em;
+    }
+    .mark{
+        margin-right: 2.95em;
+        
+    }
+    header{
+        width: 100vw;
+        top:0;
+        left:0;
+        height: auto;
+        margin: 0;
+        margin-bottom: -1em;
+        
+        
+    }
+
+    
+    nav{
+        transform: translateX(0);
+        position:unset;
+        display: block;
+        width: auto;
+        height: auto;
+        background: none;
+        
+    }
+
+    .hero{
+        padding: 3em;
+    }
+    nav svg.close{
+        display:none;
+    }
+
+    nav ul{
+        display: flex; /*three columns when they hang at top*/
+        margin: 0; /*initial margin is set to 0*/
+        
+    }
+/*
+    nav ul a{
+        color: white;
+        padding: 0.5em 1.5em;
+        font-size: 0.9rem;
+    }
+*/
+
+    nav ul li a{
+        position: relative;
+        overflow: hidden;
+        display: block;
+        transition: 1s all ease;
+        color: white;
+        padding: 0.7em 1.2em;
+        font-size: 1.2rem;
+        margin-top: 1.4em;
+        
+    }
+
+    /*button transitions*/
+    nav ul a:before{
+        width: 100%;
+        height: 0;
+        transform: translate(-50%,-50%) rotate(-45deg);
+        
+        transition: all 0.7s ease;
+        
+    }
+    nav ul a:hover::before{
+        height: 380%;
+        
+    }
+
+/*
+    nav ul a:hover{
+        background: green;
+        text-transform: underline;
+        
+        z-index: 200;
+    }
+    */
+}
+
+.open-nav{
+    transform: translateX(0%);
+}
+
+
+@keyframes moveArrow{
+    from{
+        transform: translateY(0px)
+    }
+    to{
+        transform: translateY(-40px)
+
+    }
+}
+
+@keyframes moveSide{
+    from{
+        transform: translateX(-20px);
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes introLoad{
+    from{
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /*use tool clippy for animation load*/
+    }
+    to{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes grow{
+    0% {font-size: 7.8vw; }
+    100% {font-size: 8vw}
+}
+
+@keyframes moveDown {
+    from{
+        transform: translateY(-100px);
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
