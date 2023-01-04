@@ -6,7 +6,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/mainTest.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/APPOINTMENT.css">
     
     <!-- add icon link -->
     <link rel = "icon" href = "img/kutsBrowserLogo.png" type = "image/x-icon">
@@ -39,15 +40,80 @@
 
         <section class="hero-img">
             <div class="hero">
-                <div class="half-text-container">
-                    <h1 class="pretext">Transforming Men's Beauty</h1>
-                    <h1 class="banner">*One Kut at a Time.</h1>
-                    <p class="subhead">Find which Kut will build you right.</p>
+                <div class="two-block-inline">
+                    <div class="half-text-container">
+                        <div class="text-container">
+                            <h1 class="pretext">Let's Change Men's Beauty Standards.</h1>
+                            <h1 class="banner"><em>One Kut at a Time.</em></h1>
+                            <p class="subhead">Find which Kut will build you right.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="half-appointment-container">
+                        <div class = "appointment-container">
+                            <div class = "appointment-subcontainer">
+                                <div class ="appointment-head">
+                                    <h1 id="form-header">MAKE YOUR APPOINTMENT</h1>
+                                    <hr id="header-line">
+                                </div>
+                                <form class ="appointment-form" action ="form.php">
+                                    <div class ="appointment-row">
+                                        <div class ="form-6-col">
+                                            <p>Your Name</p>
+                                            <input type="text" id="name" name="name" value="" placeholder="Your Name" />
+        
+                                        </div>
+                                        <div class ="form-6-col">
+                                            <p>Phone Number</p>
+                                            <input type="text" id="number" name="number" value=""
+                                            placeholder="000-000-0000">
+                                        </div>
+                                    </div>
+        
+                                    <div class ="appointment-row">
+                                        <div class="appointment-col-12">
+                                            <p>Email</p>
+                                            <input type="text" id="email" name="email" value=""
+                                            placeholder="knnthkuts@kuts.com">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class ="appointment-row">
+                                        <div class ="form-6-col">
+                                            <p>Date</p>
+                                            <input type="date" id="date" name="date">
+                                        </div>
+                                        <div class ="form-6-col">
+                                            <p>Time</p>
+                                            <select name="time-select">
+                                                <option>3:00 PM</option>
+                                                <option>4:00 PM</option>
+                                                <option>5:00 PM</option>
+                                                <option>6:00 PM</option>
+                                            </select>
+                                        </div>
+                                    </div>
+        
+                                    <div class ="appointment-row">
+                                        <div class="appointment-col-12">
+                                            <p>Anything else we should know?</p>
+                                            <textarea placeholder="TYPE HERE"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class ="appointment-row-center">
+                                        <div class="appointment-col-3">
+                                            <input type="submit" id="submit" value="Submit">
+                                        </div>
+        
+                                    </div>
+        
+        
+                                </form>
+                            </div>                 
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="half-appointment-container">
-                
-                </div>
                 
                 <svg class="down-arrow" viewBox="0 0 16 132" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.29289 131.707C7.68341 132.098 8.31658 132.098 8.7071 131.707L15.0711 125.343C15.4616 124.953 15.4616 124.319 15.0711 123.929C14.6805 123.538 14.0474 123.538 13.6568 123.929L7.99999 129.586L2.34314 123.929C1.95262 123.538 1.31945 123.538 0.928927 123.929C0.538402 124.319 0.538402 124.953 0.928927 125.343L7.29289 131.707ZM7 -4.37114e-08L6.99999 131L8.99999 131L9 4.37114e-08L7 -4.37114e-08Z" fill="black"/>
@@ -58,13 +124,13 @@
         </section>
 
 
-        <section class="more-info">   
+        <section class="more-info">
             <div class="hero">
-                <h1 class="appointment"></h1>
+                
             </div>
         </section>
 
-        
+
         <section class="kuts-vid">
         
             <video autoplay muted loop>
