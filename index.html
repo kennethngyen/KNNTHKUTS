@@ -56,7 +56,7 @@
                                     <h1 id="form-header">MAKE YOUR APPOINTMENT</h1>
                                     <hr id="header-line">
                                 </div>
-                                <form class ="appointment-form" action ="form.php">
+                                <form class ="appointment-form" action ="form.php" method="post">
                                     <div class ="appointment-row">
                                         <div class ="form-6-col">
                                             <p>Your Name</p>
@@ -65,7 +65,7 @@
                                         </div>
                                         <div class ="form-6-col">
                                             <p>Phone Number</p>
-                                            <input type="text" id="number" name="number" value=""
+                                            <input type="text" id="number" name="phone" value=""
                                             placeholder="000-000-0000">
                                         </div>
                                     </div>
@@ -85,11 +85,11 @@
                                         </div>
                                         <div class ="form-6-col">
                                             <p>Time</p>
-                                            <select name="time-select">
-                                                <option>3:00 PM</option>
-                                                <option>4:00 PM</option>
-                                                <option>5:00 PM</option>
-                                                <option>6:00 PM</option>
+                                            <select name="time">
+                                                <option value="3">3:00 PM</option>
+                                                <option value="4">4:00 PM</option>
+                                                <option value="5">5:00 PM</option>
+                                                <option value="6">6:00 PM</option>
                                             </select>
                                         </div>
                                     </div>
@@ -97,7 +97,7 @@
                                     <div class ="appointment-row">
                                         <div class="appointment-col-12">
                                             <p>Anything else we should know?</p>
-                                            <textarea placeholder="TYPE HERE"></textarea>
+                                            <textarea placeholder="TYPE HERE" name="info"></textarea>
                                         </div>
                                     </div>
                                     <div class ="appointment-row-center">
